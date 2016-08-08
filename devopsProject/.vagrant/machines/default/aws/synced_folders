@@ -1,1 +1,0 @@
-{"rsync":{"/tmp/vagrant-puppet/manifests-e1ae54cebc44b6dff2de73092b7af824":{"owner":"root","nfs__quiet":true,"guestpath":"/tmp/vagrant-puppet/manifests-e1ae54cebc44b6dff2de73092b7af824","hostpath":"/etc/puppet/modules/agility-mysql/manifests","disabled":false,"__vagrantfile":true,"group":"ubuntu"}}}

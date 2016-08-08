@@ -35,8 +35,10 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class mysql {
-include mysql::params
-include mysql::install
 
+class mysql {
+include mysql::install
+include msyql::service
+include mysql::config
+include mysql::createdb
 }

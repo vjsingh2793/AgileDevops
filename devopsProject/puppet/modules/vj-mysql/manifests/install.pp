@@ -1,11 +1,12 @@
 if $mysql_value == undef {
 	$mysql_value = hiera('mysql')
 }
-class mysql{
+	
+class mysql::install{
 
 	package { ['mysql-server']:
-    ensure => present,
-	  require => Exec['apt-get update'],
+	ensure => present,
+	require => Exec['apt-get update'],
   }
 
   service { 'mysql':
@@ -25,4 +26,3 @@ class mysql{
     path    => ['/bin', '/usr/bin'],
     require => Service['mysql'];
   }
-}
