@@ -36,6 +36,7 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class mysql {
-
+include mysql::params
+include mysql::install
 
 }

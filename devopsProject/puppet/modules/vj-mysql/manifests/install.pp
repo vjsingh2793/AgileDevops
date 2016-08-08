@@ -1,4 +1,7 @@
-class mysql($Password="root") {
+if $mysql_value == undef {
+	$mysql_value = hiera('mysql')
+}
+class mysql{
 
 	package { ['mysql-server']:
     ensure => present,
@@ -17,7 +20,7 @@ class mysql($Password="root") {
   }
 
   exec { 'set-mysql-password':
-    unless  => 'mysqladmin -uroot -proot password "$Password"',
+    unless  => 'mysqladmin -uroot -proot password $mysql_value['admin_pass']',
     command => 'mysqladmin -uroot password root',
     path    => ['/bin', '/usr/bin'],
     require => Service['mysql'];
