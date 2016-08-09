@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "Updating Apt-Get"
 sudo apt-get --yes update
 sudo apt-get --yes upgrade

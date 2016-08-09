@@ -1,0 +1,11 @@
+mysql:
+    admin_pass: agileDevops
+    databases:
+        database1:
+            grant:
+                - ALL
+            name: mydb
+            host: localhost
+            user: dbadmin
+            password: agileDevops
+            sql_file: ''
