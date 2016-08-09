@@ -1,6 +1,6 @@
-# == Class: mysql
+# == Class: jenkins
 #
-# Full description of class mysql here.
+# Full description of class jenkins here.
 #
 # === Parameters
 #
@@ -23,7 +23,7 @@
 #
 # === Examples
 #
-#  class { mysql:
+#  class { jenkins:
 #    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
 #  }
 #
@@ -35,10 +35,7 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
+class jenkins {
+include jenkins::install
 
-class mysql {
-include mysql::install
-include mysql::service
-include mysql::config
-include mysql::setpassword
 }

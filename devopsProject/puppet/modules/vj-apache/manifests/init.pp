@@ -1,6 +1,6 @@
-# == Class: mysql
+# == Class: apache
 #
-# Full description of class mysql here.
+# Full description of class apache here.
 #
 # === Parameters
 #
@@ -23,7 +23,7 @@
 #
 # === Examples
 #
-#  class { mysql:
+#  class { apache:
 #    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
 #  }
 #
@@ -35,10 +35,17 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
+class apache {
+package { ['apache2', 'apache2-mpm-prefork']:
+    ensure => present;
+  }
 
-class mysql {
-include mysql::install
-include mysql::service
-include mysql::config
-include mysql::setpassword
+  service { 'apache2':
+    ensure  => running,
+    require => Package['apache2'];
+  }
+
+  apache::conf { ['apache2.conf', 'envvars', 'ports.conf']: }
+  apache::module { ['expires.load', 'proxy.conf', 'proxy.load', 'proxy_http.load', 'rewrite.load']: }
+
 }

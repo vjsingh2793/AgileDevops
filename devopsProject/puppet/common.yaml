@@ -1,6 +1,6 @@
 mysql:
     admin_pass: agileDevops
     username: devopsDbUser
-    password: devop
+    password: P@ssw0rd
     dbname: firstDB
     

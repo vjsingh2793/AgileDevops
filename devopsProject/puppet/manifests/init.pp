@@ -1,3 +1,3 @@
 node default{
- include sql
+ include mysql
 }
